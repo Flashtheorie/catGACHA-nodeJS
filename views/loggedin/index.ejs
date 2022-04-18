@@ -1,0 +1,75 @@
+<html>
+    <head>
+      <meta http-equiv="Content-Security-Policy" content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;">
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+     <title>Index</title>
+    </head> 
+<body p-0 m-0>
+  <%- include('../loggedin/include/navbar.ejs'); %>
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  <div class="w-full h-full text-gray-700  dark:text-gray-200 dark:bg-gray-900" id="body">
+    
+     
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+
+<br><br><br><br><br><br><br>
+
+
+      <div class="flex flex-col justify-center items-center">
+        <% if(catfood > 0){ %>
+          <a href="/drop" onclick="myFunction()" type="button" id="btndrop" class="inline-flex items-center px-20 py-8 border border-transparent font-medium rounded-full shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 text-2xl">
+          IT'S RAINING CATS <i class="fa-duotone fa-cat fa-xl"></i> <span class="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full"><%= catfood %></span>
+          </a>
+      </div>
+        <% } else{ %>  
+          <a  type="button" class="inline-flex items-center px-20 py-8 border border-transparent font-medium rounded-full shadow-sm text-white bg-gray-600  text-2xl cursor-not-allowed">
+            You do not have enough Catfood<i class="fa-duotone fa-cat fa-xl"></i> <span class="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full"><%= catfood %></span>
+            </a></div>
+            <% } %>
+
+
+
+
+            <div class="max-w-screen-lg bg-white shadow-2xl rounded-lg mx-auto text-center py-12 mt-4">
+              Cats dropped : <br>
+              <div class="mx-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+                
+              
+              <% user.forEach(function(o) { %>
+              <div class="group relative">
+                <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                  <img src="<%= o.img %>" alt="" class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                </div>
+                <div class="mt-4 flex justify-between" >
+                  <div>
+                    <h3 class="text-sm text-gray-700 dark:text-white">
+                      
+                    </h3>
+                    <p class="mt-1 text-sm text-gray-500"><br> <small>- <%= o.cat %> </small></p>
+                  </div>
+                  
+                </div>
+                </div>
+                
+                   
+              <% }); %>
+                
+                        </div>
+      
+      
+      </div> <!-- content -->
+
+<div class="container" align="center">
+
+
+
+</div> <!-- container -->
+
+
+<script>
+
+</script>
+</body>
+</html>
+
